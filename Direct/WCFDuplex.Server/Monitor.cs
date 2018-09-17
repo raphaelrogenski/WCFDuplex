@@ -29,7 +29,7 @@ namespace WCFDuplex.Server
 
     private void Loop()
     {
-      while (true)
+      while (status)
       {
         Execute();
         Thread.Sleep(1000);
@@ -38,7 +38,14 @@ namespace WCFDuplex.Server
 
     private void Execute()
     {
-      _callback.Update(DateTime.Now);
+      try
+      {
+        _callback.Update(datetime);
+      }
+      catch (Exception e)
+      {
+        status = false;
+      }
     }
   }
 }

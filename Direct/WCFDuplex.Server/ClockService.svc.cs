@@ -17,7 +17,7 @@ namespace WCFDuplex.Server
     public void Connect()
     {
       if (_monitor != null)
-        throw new FaultException(new FaultReason("Já está registrado!"));
+        throw new FaultException(new FaultReason("Already registered!"));
 
       _monitor = new Monitor(_callback);
       _monitor.Start();
@@ -26,7 +26,7 @@ namespace WCFDuplex.Server
     public void Disconnect()
     {
       if (_monitor == null)
-        throw new FaultException(new FaultReason("Não está registrado!"));
+        throw new FaultException(new FaultReason("Isn't registered!"));
 
       _monitor.Stop();
       _monitor = null;
