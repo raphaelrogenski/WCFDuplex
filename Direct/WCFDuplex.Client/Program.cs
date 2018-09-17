@@ -8,7 +8,7 @@ namespace WCFDuplex.Client
   {
     static void Main()
     {
-      InstanceContext context = new InstanceContext(new HorarioCallback());
+      InstanceContext context = new InstanceContext(new ClockCallback());
 
       var client = new ClockServiceClient(context);
       client.Connect();
