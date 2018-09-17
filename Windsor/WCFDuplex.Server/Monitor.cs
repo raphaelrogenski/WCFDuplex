@@ -38,23 +38,14 @@ namespace WCFDuplex.Server
 
     private void Execute()
     {
-      var datetime = DateTime.Now;
-
-      var init = DateTime.Now;
-
       try
       {
         _callback.Update(datetime);
       }
       catch (Exception e)
       {
-        Console.WriteLine($"{_thread.Name} - {e.GetType().Name} - Aborting thread");
         status = false;
       }
-
-      var time = DateTime.Now.Subtract(init).TotalMilliseconds;
-
-      Console.WriteLine($">>> {time}");
     }
   }
 }
