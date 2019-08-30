@@ -40,7 +40,7 @@ namespace WCFDuplex.Server
     {
       try
       {
-        _callback.Update(datetime);
+        _callback.Update(DateTime.Now);
       }
       catch (Exception e)
       {
